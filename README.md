@@ -1,24 +1,17 @@
-# vue-snow-calendar
+# vue-snow-ui
 
-## Project setup
-```
-yarn install
-```
 
-### Compiles and hot-reloads for development
-```
-yarn serve
+## install
+
+```shell
+npm install vue-snow-ui -s
 ```
 
-### Compiles and minifies for production
-```
-yarn build
-```
+## use
 
-### Lints and fixes files
-```
-yarn lint
-```
+```vue
+import snowUi from 'vue-snow-ui';
+import 'vue-snow-ui/lib/vue-snow-ui.css'
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Vue.use(snowUi)
+```

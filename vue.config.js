@@ -8,11 +8,25 @@ function resolve(dir) {
 const vueConfig = {
   configureWebpack: {
     // externals: prodExternals,
-    plugins: [
-    ]
+    plugins: []
+  },
+  pages: {
+    index: {
+      entry: 'examples/main.js',
+      template: 'public/index.html',
+      filename: 'index.html'
+    }
   },
   chainWebpack: config => {
-      config.resolve.alias.set('@$', resolve('src'))
+    // config.resolve.alias.set('@$', resolve('examples'))
+    // 扩展 webpack 配置，使 packages 加入编译
+    config.module
+      .rule('js')
+      .include
+      .add('/packages')
+      .end()
+      .use('babel')
+      .loader('babel-loader')
   },
   css: {
     loaderOptions: {
