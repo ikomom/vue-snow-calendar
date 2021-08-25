@@ -32,11 +32,11 @@ const vueConfig = {
     loaderOptions: {
       less: {
         modifyVars: {
-          // less vars，customize ant design theme
-          'primary-color': '#3377FF',
-          // 'link-color': '#F5222D',
-          'border-radius-base': '4px'
-          // 'border-radius-base': '2px'
+          // // less vars，customize ant design theme
+          // 'primary-color': '#3377FF',
+          // // 'link-color': '#F5222D',
+          // 'border-radius-base': '4px'
+          // // 'border-radius-base': '2px'
         },
         javascriptEnabled: true
       }
