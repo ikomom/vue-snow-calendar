@@ -22,8 +22,15 @@
 </template>
 
 <script>
+import * as dayjs from 'dayjs'
+import duration from 'dayjs/plugin/duration'
+dayjs.extend(duration)
+
 export default {
-  name: "SnowCalendar"
+  name: "XCalendar",
+  created() {
+    console.log('dayjs', dayjs.duration({month: 3}).weeks())
+  },
 }
 </script>
 

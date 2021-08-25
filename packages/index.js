@@ -1,11 +1,11 @@
 // 导入button组件
 import XButton from './Button'
-import Calendar from './Calendar'
+import XCalendar from './Calendar'
 
 // 组件列表
 const components = [
   XButton,
-  Calendar
+  XCalendar
 ]
 
 // 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，那么所有的组件都会被注册
@@ -22,7 +22,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 export {
   XButton,
-  Calendar,
+  XCalendar,
 }
 
 export default {
