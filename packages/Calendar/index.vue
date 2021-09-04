@@ -16,7 +16,7 @@
       {{month}}-{{day}}
       {{selectedDate.format('YYYY / MM / DD')}}
     </div>
-    <month />
+    <month :selectedDate="selectedDate"/>
   </div>
 </template>
 
@@ -29,7 +29,6 @@ dayjs.locale('zh-cn')
 dayjs.extend(duration)
 
 import Month from "./month";
-import {generateMonthData, generateWeekData} from "../utils/date";
 
 export default {
   name: "XCalendar",
@@ -58,7 +57,7 @@ export default {
   provide() {
     return {
       langType: this.langType,
-      selectedDate: this.selectedDate,
+      // selectedDate: this.selectedDate.format('YYYY-MM-DD'),
     }
   },
   computed: {
@@ -78,9 +77,6 @@ export default {
         this.day = this.monthDayCount
       }
     }
-  },
-  created() {
-    // console.log('dayjs',  generateWeekData(dayjs()))
   },
 }
 </script>

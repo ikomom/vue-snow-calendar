@@ -8,9 +8,9 @@
     </tr>
     </thead>
     <tbody>
-      <tr v-for="(row, index) in monthData" :key="index">
+      <tr v-for="(row, index) in monthData" :key="index" style="position: relative">
         <td v-for="(item, itemIndex) in row" :key="itemIndex" @dragover.stop="onDragover">
-          {{item.format('MM/DD')}}
+          <month-cell :date="item"/>
         </td>
       </tr>
     </tbody>
@@ -21,11 +21,18 @@
 
 import {generateMonthData} from "../../utils/date";
 import {chunk} from "../../utils/common";
+import MonthCell from "./MonthCell";
 
 export default {
   name: "Month",
-  inject: ['langType', 'selectedDate'],
-  props: {},
+  components: {MonthCell},
+  inject: ['langType'],
+  props: {
+    selectedDate: {
+      type: Object,
+      default: () => new Date(),
+    }
+  },
   data() {
     return {
       monthData: []
@@ -55,7 +62,7 @@ export default {
   border-collapse: collapse;
   width: 100%;
   th,td {
-    padding: 10px;
+    padding: 0px;
   }
 
 }
