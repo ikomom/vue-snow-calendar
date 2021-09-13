@@ -1,6 +1,6 @@
 {
   "name": "vue-snow-ui",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "author": "ikonon",
   "description": "simple ui",
   "main": "./lib/vue-snow-ui.umd.min.js",
